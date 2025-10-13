@@ -41,12 +41,10 @@ class TestVLMModels(CustomTestCase):
         cls.base_url = DEFAULT_URL_FOR_TEST
         cls.api_key = "sk-123456"
         cls.time_out = DEFAULT_TIMEOUT_FOR_SERVER_LAUNCH
-
         if cls.parsed_args is None:
             cls.parsed_args = SimpleNamespace(
                 mem_fraction_static=DEFAULT_MEM_FRACTION_STATIC
             )
-
         # Set OpenAI API key and base URL environment variables. Needed for lmm-evals to work.
         os.environ["OPENAI_API_KEY"] = cls.api_key
         os.environ["OPENAI_API_BASE"] = f"{cls.base_url}/v1"
